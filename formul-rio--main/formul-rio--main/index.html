@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title> Atividade 1</title>
+</head>
+
+<body>
+    <h1 id="Título"> Kallini Vitória Santos</h1>
+    <b id="Título2"> Desenvolvimento de sistemas</b>
+    <br>
+    <p class="fundoAzul"> Escola Estadual Euclides Da Cunha</p>
+    <i class="fundoAzul"> Segundo ano DS 2026</i>
+
+    <h1 class="container"> HTML Formulário</h1>
+
+    <div class="container">
+        <form method="">
+
+            <div class="estilo-caixa">
+                <label>primeiro nome</label>
+                <input type="text" id="nome" placeholder="Digite o seu nome">
+            </div>
+            <div class="estilo-caixa">
+                <label>segundo nome</label>
+                <input type="text" id="sobrenome" placeholder="Digite o seu sobrenome">
+            </div>
+            <div class="estilo-caixa">
+                <label> data de nascimento </label>
+                <input type="date" id="data">
+            </div>
+            <div class="estilo-caixa">
+                <label> email </label>
+                <input type="text" id="email" placeholder="Digite o seu email">
+            </div>
+            <div class="estilo-caixa">
+                <label> número de telefone </label>
+                <input type="tel" id="telefone" placeholder="Digite o seu telefone">
+            </div>
+            <div>
+                <button type="submit">enviar</button>
+                <button type="reset">apagar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("formulario").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            let nome = document.getElementById("nome").value;
+            let sobrenome = document.getElementById("sobrenome").value;
+            let date = document.getElementById("date").value;
+            let email = document.getElementById("email").value;
+            let tel = document.getElementById("tel").value;
+
+            if (nome === "") {
+                alert("Preencha o primeiro nome!");
+                return;
+            }
+
+            if (sobrenome === "") {
+                alert("Preencha o sobrenome!");
+                return;
+            }
+
+            if (date === "") {
+                alert("Informe a data de nascimento!");
+                return;
+            }
+
+            if (!email.includes("@")) {
+                alert("Digite um e-mail válido!");
+                return;
+            }
+
+            if (tel.length < 8) {
+                alert("Digite um telefone válido!");
+                return;
+            }
+
+            let usuario ={
+                nome: nome,
+                sobrenome: sobrenome,
+                date: date,
+                email: email,
+                tel: tel
+            };
+
+            console.log("dados do formulário");
+            console.log(usuario);
+
+            alert("Formulário enviado com secesso!");
+
+        });
+    </script>
+
+</body>
+</html>
